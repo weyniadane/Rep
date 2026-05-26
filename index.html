@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Portfolio</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+      background: linear-gradient(to right, #dfe9f3, #ffffff);
+      text-align: center;
+    }
+
+    .card {
+      background: gray;
+      width: 90%;
+      max-width: 420px;
+      margin: 50px auto;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #2ecc71;
+    }
+
+    h1 {
+      color: #2c3e50;
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+
+    a p:hover {
+      color: #2ecc71;
+      font-weight: bold;
+    }
+
+    .skills span {
+      display: inline-block;
+      background: #dfefff;
+      margin: 3px;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+
+    button {
+      border: none;
+      padding: 10px;
+      width: 100%;
+      border-radius: 8px;
+      margin-top: 8px;
+      cursor: pointer;
+      color: white;
+      font-size: 14px;
+    }
+
+    .github {
+      background: #333;
+    }
+
+    .telegram {
+      background: #0088cc;
+    }
+
+    .linkedin {
+      background: #0077b5;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <!-- PHOTO -->
+  <img src="https://drive.google.com/thumbnail?id=1Yh4DP4oUl7fxMvyvF1Ylx6NFW1fh42sX">
+
+  <h1>Kalkidan Mesfin</h1>
+  <p>Computer Science Student</p>
+
+  <!-- SKILLS -->
+  <h3>Skills</h3>
+  <div class="skills">
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>JavaScript</span>
+  </div>
+
+  <!-- CONTACT -->
+  <h3>Connect with me</h3>
+
+  <a href="https://github.com/YOUR-GITHUB-USERNAME" target="_blank">
+    <button class="github">💻 View My GitHub Work</button>
+  </a>
+
+  <a href="https://t.me/YOUR-TELEGRAM-USERNAME" target="_blank">
+    <button class="telegram">💬 Contact on Telegram</button>
+  </a>
+
+  <a href="https://linkedin.com/in/YOUR-LINKEDIN" target="_blank">
+    <button class="linkedin">🔗 LinkedIn Profile</button>
+  </a>
+
+</div>
+
+</body>
+</html>
