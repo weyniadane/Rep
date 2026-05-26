@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+</html>
+heckup System</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f6ff;
+            text-align: center;
+        }
+
+        .container {
+            width: 400px;
+            margin: auto;
+            margin-top: 30px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #ccc;
+        }
+
+        button {
+            padding: 8px 15px;
+            margin: 3px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            background: white;
+        }
+
+        .active {
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+        }
+
+        .check {
+            background-color: #3498db;
+            color: white;
+            margin-top: 15px;
+            padding: 10px 20px;
+            border:none;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            white-space: pre-line;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>🏥 Health Checkup System</h2>
+
+    <h4>Fever</h4>
+    <button id="fever_yes" onclick="setSymptom('fever','yes')">Yes</button>
+    <button id="fever_no" onclick="setSymptom('fever','no')">No</button>
+
+    <h4>Cough</h4>
+    <button id="cough_yes" onclick="setSymptom('cough','yes')">Yes</button>
+    <button id="cough_no" onclick="setSymptom('cough','no')">No</button>
+
+    <h4>Headache</h4>
+    <button id="headache_yes" onclick="setSymptom('headache','yes')">Yes</button>
+    <button id="headache_no" onclick="setSymptom('headache','no')">No</button>
+
+    <h4>Fatigue</h4>
+    <button id="fatigue_yes" onclick="setSymptom('fatigue','yes')">Yes</button>
+    <button id="fatigue_no" onclick="setSymptom('fatigue','no')">No</button>
+<h4>vomiting</h4>
+    <button id="vomiting_yes" onclick="setSymptom('vomiting','yes')">Yes</button>
+    <button id="vomiting_no" onclick="setSymptom('vomiting','no')">No</button>
+
+    <br>
+
+    <button class="check" onclick="checkSymptoms()">CHECK RESULT</button>
+
+    <div id="result"></div>
+
+</div>
+
+<script>
+    let symptoms = {
+        fever: "",
+        cough: "",
+        headache: "",
+        fatigue: "" ,
+        vomiting: "", 
+        
+    };
+
+    function setSymptom(name, value) {
+        symptoms[name] = value;
+
+        // reset both buttons
+        document.getElementById(name + "_yes").classList.remove("active");
+        document.getElementById(name + "_no").classList.remove("active");
+
+        // activate selected button
+        document.getElementById(name + "_" + value).classList.add("active");
+    }
+
+    function checkSymptoms() {
+        let result = "";
+
+        if (symptoms.fever == "yes" && symptoms.cough == "yes") {
+            result = "Flu/Infection\nMedication: Paracetamol, Cough Syrup";
+        }
+        else if (symptoms.headache == "yes" && symptoms.fatigue == "yes") {
+            result = "Stress/Dehydration\nMedication: Paracetamol, ORS";
+        }
+        else if (symptoms.fever == "yes") {
+            result = "Fever detected\nMedication: Paracetamol";
+        }
+        else if (symptoms.cough == "yes") {
+            result = "Mild cough\nMedication: Cough syrup";
+        }
+        else if (symptoms.vomiting=="yes"&& symptoms.headache){
+            result= "GI disturbance detected\nMedication:anti emetic drug";
+        }
+        else {
+            result = "No serious symptoms detected";
+        }
+
+        document.getElementById("result").innerText = result;
+    }
+</script>
+<a href="index.html"</a>
+</body>
+</html>
